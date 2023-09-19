@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply bg-gray-900 text-white;
+}
+
+.card-container {
+  @apply max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700;
+}
+
+.card-title {
+  @apply mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white;
+}
+
+.card-subtitle {
+  @apply mb-3 font-normal text-gray-700 dark:text-gray-400;
+}
