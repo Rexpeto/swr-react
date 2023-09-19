@@ -1,9 +1,7 @@
+import { NotUsingSWR } from "@/components";
+
 const App = () => {
-  return (
-    <div>
-      <h1>hello world</h1>
-    </div>
-  );
+  return <NotUsingSWR />;
 };
 
 export default App;
