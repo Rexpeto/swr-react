@@ -1,2 +1,2 @@
-export * from "./notUsingSWR";
 export * from "./card";
+export * from "./navBar";
