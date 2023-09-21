@@ -1,8 +1,15 @@
 import { Link } from "react-router-dom";
 import { publicRoutes } from "@/models";
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
 
 const NavBar = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleClick = () => {
+    setIsVisible(!isVisible);
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -10,7 +17,7 @@ const NavBar = () => {
           <img src="/logo.svg" className="h-8 mr-3" alt="Vypers" />
           <span className="navbar-logo__title">Vypers</span>
         </Link>
-        <button type="button" className="navbar-button">
+        <button type="button" className="navbar-button" onClick={handleClick}>
           <span className="sr-only">Open main menu</span>
           <svg
             className="w-5 h-5"
@@ -28,7 +35,11 @@ const NavBar = () => {
             />
           </svg>
         </button>
-        <div className="hidden w-full md:block md:w-auto">
+        <div
+          className={`w-full md:block md:w-auto transition duration-150 ${
+            isVisible ? "block" : "hidden"
+          }`}
+        >
           <ul className="navbar-links">
             <li>
               <NavLink
